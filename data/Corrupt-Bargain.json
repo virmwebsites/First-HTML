@@ -1,0 +1,199 @@
+{
+  "games": [
+    {
+      "name": "The Corrupt Bargain of 1824",
+      "categories": [
+        "Key Figures",
+        "The Election of 1824",
+        "The Alleged Bargain",
+        "Constitutional Rules",
+        "The Aftermath & 1828"
+      ],
+      "cards": [
+        {
+          "category": "Key Figures",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "Which candidate was known for supporting and representing the 'common man'?",
+          "answer": "Andrew Jackson"
+        },
+        {
+          "category": "Key Figures",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "Who was the Speaker of the House accused of making a deal to secure the presidency for John Quincy Adams?",
+          "answer": "Henry Clay"
+        },
+        {
+          "category": "Key Figures",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "Who was the fourth major candidate in the election of 1824, alongside Jackson, Adams, and Clay?",
+          "answer": "William Crawford"
+        },
+        {
+          "category": "Key Figures",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "Which candidate championed the 'American System' policy platform?",
+          "answer": "Henry Clay"
+        },
+        {
+          "category": "Key Figures",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "What key economic platform promoted a national bank, protective tariffs, and internal improvements?",
+          "answer": "The American System"
+        },
+        {
+          "category": "The Election of 1824",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "In what year did the controversial election known as the 'Corrupt Bargain' take place?",
+          "answer": "1824"
+        },
+        {
+          "category": "The Election of 1824",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "How many major candidates ran for president in the 1824 election?",
+          "answer": "Four"
+        },
+        {
+          "category": "The Election of 1824",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "Which candidate received the most popular votes and electoral votes in 1824 but still failed to win the presidency?",
+          "answer": "Andrew Jackson"
+        },
+        {
+          "category": "The Election of 1824",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "Why was the election of 1824 sent to the House of Representatives to decide?",
+          "answer": "No candidate won a majority of the electoral votes."
+        },
+        {
+          "category": "The Election of 1824",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "What type of taxes were placed on imported goods under the American System to protect U.S. businesses?",
+          "answer": "Protective Tariffs"
+        },
+        {
+          "category": "The Alleged Bargain",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "What was the 'Corrupt Bargain'?",
+          "answer": "The alleged deal between John Quincy Adams and Henry Clay to secure Adams the presidency."
+        },
+        {
+          "category": "The Alleged Bargain",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "Who won the presidential election of 1824 after the House of Representatives voted?",
+          "answer": "John Quincy Adams"
+        },
+        {
+          "category": "The Alleged Bargain",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "What cabinet position did John Quincy Adams give Henry Clay after taking office?",
+          "answer": "Secretary of State"
+        },
+        {
+          "category": "The Alleged Bargain",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "Why did Andrew Jackson and his supporters believe the 1824 election was unfair?",
+          "answer": "They believed Adams and Clay made a secret deal to block Jackson from becoming president."
+        },
+        {
+          "category": "The Alleged Bargain",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "Have historians conclusively proven that an actual corrupt deal took place between Adams and Clay?",
+          "answer": "No. It remains a political accusation and historic controversy rather than a proven agreement."
+        },
+        {
+          "category": "Constitutional Rules",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "Which government body is responsible for choosing the president when no candidate achieves an electoral majority?",
+          "answer": "The House of Representatives"
+        },
+        {
+          "category": "Constitutional Rules",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "Under constitutional rules, how many top electoral candidates can the House of Representatives choose from?",
+          "answer": "The top three candidates"
+        },
+        {
+          "category": "Constitutional Rules",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "Which major candidate finished fourth in electoral votes and was automatically eliminated from the House vote?",
+          "answer": "Henry Clay"
+        },
+        {
+          "category": "Constitutional Rules",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "Which Constitutional Amendment outlines the Contingent Election process used by the House in 1824?",
+          "answer": "The 12th Amendment"
+        },
+        {
+          "category": "Constitutional Rules",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "Who officially became the 6th President of the United States as a result of the 1824 House vote?",
+          "answer": "John Quincy Adams"
+        },
+        {
+          "category": "The Aftermath & 1828",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "How did Andrew Jackson's supporters react to the House vote outcome?",
+          "answer": "They reacted with outrage, accusing Adams and Clay of corruption and political theft."
+        },
+        {
+          "category": "The Aftermath & 1828",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "What major political party did Andrew Jackson and his supporters organize following the 1824 election?",
+          "answer": "The Democratic Party"
+        },
+        {
+          "category": "The Aftermath & 1828",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "Which president did Andrew Jackson defeat in the rematch election of 1828?",
+          "answer": "John Quincy Adams"
+        },
+        {
+          "category": "The Aftermath & 1828",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "What was the outcome of the presidential election of 1828?",
+          "answer": "Andrew Jackson won a decisive victory over John Quincy Adams."
+        },
+        {
+          "category": "The Aftermath & 1828",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "What position did Henry Clay hold prior to his appointment as Secretary of State under President Adams?",
+          "answer": "Speaker of the House of Representatives"
+        }
+      ],
+      "team_count": 4,
+      "values": [
+        100,
+        200,
+        300,
+        400,
+        500
+      ]
+    }
+  ]
+}

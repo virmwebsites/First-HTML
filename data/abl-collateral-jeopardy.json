@@ -1,0 +1,235 @@
+{
+  "games": [
+    {
+      "name": "ABL Collateral Jeopardy",
+      "categories": [
+        "Accounts Receivable",
+        "Deal Structuring",
+        "Fees & Interest",
+        "Inventory",
+        "Potpourri",
+        "Fraud"
+      ],
+      "cards": [
+        {
+          "category": "Accounts Receivable",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "What is it called when an invoice is dated May 31, but supporting shipping documentation is dated June 2?",
+          "answer": "Prebilling"
+        },
+        {
+          "category": "Accounts Receivable",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "This risk arises when a single customer represents an outsized share of the borrower's receivables.",
+          "answer": "Concentration Risk"
+        },
+        {
+          "category": "Accounts Receivable",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "Dilution is generally calculated as credits divided by this figure over a trailing period.",
+          "answer": "Gross Sales"
+        },
+        {
+          "category": "Accounts Receivable",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "What are 3 documents used to complete a Ship Test?",
+          "answer": "Bill of Lading, Invoice, Purchase Order"
+        },
+        {
+          "category": "Accounts Receivable",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "AR advances at 85%. Which reduces NET availability by more: a new $100K reserve, or a $100K increase in ineligible accounts?",
+          "answer": "The $100K reserve because it deducts a full $100K, while the ineligible only deducts 85% (≈$85K)."
+        },
+        {
+          "category": "Deal Structuring",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "Unlike revolving A/R and inventory, an M&E or real estate component in the borrowing base usually reduces over time via this mechanism. Why?",
+          "answer": "Amortization / Amortization Schedule. Bonus: It reduces exposure against collateral that may depreciate or have a fixed liquidation value over time."
+        },
+        {
+          "category": "Deal Structuring",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "How many months of rent do we typically reserve if applicable?",
+          "answer": "3 months"
+        },
+        {
+          "category": "Deal Structuring",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "How long does a UCC-1 lien last?",
+          "answer": "5 years"
+        },
+        {
+          "category": "Deal Structuring",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "What is it called when a loan balance exceeds availability?",
+          "answer": "Overadvance"
+        },
+        {
+          "category": "Deal Structuring",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "What is an agreement between a senior and a junior lender that governs lien priority and standstill provisions?",
+          "answer": "Intercreditor Agreement"
+        },
+        {
+          "category": "Fees & Interest",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "What different interest rate types have we seen in our deals?",
+          "answer": "Prime Rate, Term SOFR, Term CORRA"
+        },
+        {
+          "category": "Fees & Interest",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "What is the charge for an incoming wire fee?",
+          "answer": "$30"
+        },
+        {
+          "category": "Fees & Interest",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "How many days of interest do we use for a yearly calc?",
+          "answer": "360 days"
+        },
+        {
+          "category": "Fees & Interest",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "What is the difference between the minimum loan balance and minimum interest requirements?",
+          "answer": "Minimum loan balance gives you both required outstandings and income. Minimum interest only gives you the income."
+        },
+        {
+          "category": "Fees & Interest",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "What is the cost per day for a borrower for a field exam? A range is acceptable.",
+          "answer": "$1,200 – $2,000"
+        },
+        {
+          "category": "Inventory",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "Eligible Inventory is $6MM, the NOLV is 70%, and the advance / discount rate is 85%. What is the Inventory Availability?",
+          "answer": "$3,570,000. Calculation: $6,000,000 × 70% × 85% = $3,570,000"
+        },
+        {
+          "category": "Inventory",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "When reviewing slow moving inventory, what is the time period for which we review sales activity?",
+          "answer": "12 months"
+        },
+        {
+          "category": "Inventory",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "Is a slow moving calculation based upon sales dollars or quantity sold?",
+          "answer": "Quantity sold"
+        },
+        {
+          "category": "Inventory",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "What is the inventory dollar threshold for allowing inventory locations to be eligible?",
+          "answer": "$100,000"
+        },
+        {
+          "category": "Inventory",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "What is the difference between OLV and FLV? Explain the potential impact on recovery values.",
+          "answer": "OLV is Orderly Liquidation Value and FLV is Forced Liquidation Value. Orderly liquidation generally takes longer and generates a higher return than forced liquidation."
+        },
+        {
+          "category": "Potpourri",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "Approximately how many active deals do we have in the portfolio?",
+          "answer": "40 – 45"
+        },
+        {
+          "category": "Potpourri",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "Give me an example of an intercompany transaction and supporting documents we might request to validate it. There are multiple answers.",
+          "answer": "Example: Rent paid to common owners; review the lease and payment support."
+        },
+        {
+          "category": "Potpourri",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "In payment terms, what does \"CIA\" stand for?",
+          "answer": "Cash in Advance"
+        },
+        {
+          "category": "Potpourri",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "What is the difference between AR Terms “FOB Shipping” and “FOB Destination”? What are the implications for eligibility?",
+          "answer": "FOB Shipping means title transfers when goods ship. FOB Destination means the borrower still owns the goods until they reach the customer’s destination. Invoice date should match title transfer because that is when the transaction becomes eligible AR."
+        },
+        {
+          "category": "Potpourri",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "What is the calculation for Days of Turnover, using AR, Inventory, or AP?",
+          "answer": "Example for AR: Beginning of month AR balance divided by collections, multiplied by number of days."
+        },
+        {
+          "category": "Fraud",
+          "order": 0,
+          "dailyDouble": false,
+          "question": "Thinking back to the “Where’s the Beef” article, McClain’s account showed signs of this specific fraud — exploiting the delay between when checks are deposited and when they clear to create the illusion of available funds.",
+          "answer": "Check kiting"
+        },
+        {
+          "category": "Fraud",
+          "order": 1,
+          "dailyDouble": false,
+          "question": "While reviewing a borrower’s bank statements, you identify recurring transfers between multiple operating accounts and personal accounts owned by principals. What are potential next steps?",
+          "answer": "Review cancelled checks or wire details for remittance references. Ask what the transactions represent and how they are accounted for."
+        },
+        {
+          "category": "Fraud",
+          "order": 2,
+          "dailyDouble": false,
+          "question": "When a borrower defaults, what formal communication does the lender send to acknowledge the default?",
+          "answer": "Reservation of Rights Letter"
+        },
+        {
+          "category": "Fraud",
+          "order": 3,
+          "dailyDouble": false,
+          "question": "What is the period called when a lender agrees not to exercise remedies despite an existing default?",
+          "answer": "Forbearance Period"
+        },
+        {
+          "category": "Fraud",
+          "order": 4,
+          "dailyDouble": false,
+          "question": "What type of financing provides new liquidity to a company operating in Chapter 11?",
+          "answer": "DIP Loan"
+        }
+      ],
+      "team_count": 6,
+      "values": [
+        100,
+        200,
+        300,
+        400,
+        500
+      ]
+    }
+  ]
+}

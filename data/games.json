@@ -1,0 +1,16 @@
+{
+  "games": [
+    {
+      "username": "test",
+      "password": "testpass",
+      "key": "abl",
+      "file": "abl-collateral-jeopardy.json"
+    },
+    {
+      "username": "Corrupt Bargain",
+      "password": "Confidential",
+      "key": "cb1824",
+      "file": "Corrupt-Bargain.json"
+    }
+  ]
+}
