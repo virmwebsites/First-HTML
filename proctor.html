@@ -1,141 +1,243 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="jeopardy-theme">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corrupt Bargain — Proctor Answer Key</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=block" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Styles.css">
-  <style>
-    .proctor-page { max-width: 1100px; margin: 0 auto; padding: 28px 20px 48px; }
-    .proctor-header { text-align: center; margin-bottom: 28px; }
-    .proctor-header h1 { color: var(--accent); font: 2.2rem 'Fredoka One', cursive; }
-    .proctor-header p { color: var(--text-muted); margin-top: 8px; }
-    .proctor-actions { margin-top: 18px; }
-    .answer-category { margin: 24px 0; break-inside: avoid; }
-    .answer-category h2 {
-      padding: 12px 16px;
-      border-radius: 8px;
-      background: var(--category-bg);
-      color: var(--category-text);
-      font-size: 1.1rem;
-      text-transform: uppercase;
-    }
-    .answer-list { display: grid; gap: 10px; margin-top: 10px; }
-    .answer-card {
-      padding: 14px 16px;
-      border: 1px solid var(--glass-border);
-      border-radius: 10px;
-      background: var(--panel-bg);
-      break-inside: avoid;
-    }
-    .answer-value {
-      color: var(--accent-light);
-      font-size: .8rem;
-      font-weight: 800;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-    .answer-question { color: var(--text); margin-top: 4px; }
-    .answer-response { color: var(--text); margin-top: 8px; }
-    .answer-response strong { color: var(--accent-light); }
-    .proctor-status { color: var(--text-muted); text-align: center; padding: 24px 0; }
-
-    @media print {
-      body { background: #fff; color: #111; }
-      .proctor-page { max-width: none; padding: 0; }
-      .proctor-header { margin-bottom: 16px; }
-      .proctor-header h1, .answer-category h2, .answer-question,
-      .answer-response, .answer-response strong, .answer-value { color: #111; }
-      .proctor-header p { color: #444; }
-      .proctor-actions, .proctor-status { display: none; }
-      .answer-category h2 { background: #eee; border: 1px solid #777; }
-      .answer-card { background: #fff; border-color: #aaa; }
-      .answer-category, .answer-card { break-inside: avoid; }
-    }
-  </style>
-</head>
-<body>
-  <main class="proctor-page">
-    <header class="proctor-header">
-      <h1 id="gameTitle">Proctor Answer Key</h1>
-      <p>Clues and answers, grouped by category and point value.</p>
-      <div class="proctor-actions">
-        <button class="btn" type="button" onclick="window.print()">Print Answer Key</button>
-      </div>
-    </header>
-    <p class="proctor-status" id="proctorStatus" role="status">Loading answer key…</p>
-    <div id="answerKey"></div>
-  </main>
-  <script>
-    async function loadAnswerKey() {
-      const status = document.getElementById("proctorStatus");
-      const answerKey = document.getElementById("answerKey");
-
-      try {
-        const response = await fetch("data/Corrupt-Bargain.json", { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`Unable to load game data (${response.status})`);
-        }
-
-        const data = await response.json();
-        const game = Array.isArray(data.games) ? data.games[0] : data;
-        if (!game || !Array.isArray(game.categories) || !Array.isArray(game.cards)) {
-          throw new Error("Game data is missing categories or clues");
-        }
-
-        document.getElementById("gameTitle").textContent = `${game.name || "Jeopardy"} — Proctor Answer Key`;
-        for (const category of game.categories) {
-          const cards = game.cards
-            .filter((card) => card.category === category)
-            .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-          if (cards.length === 0) continue;
-
-          const section = document.createElement("section");
-          section.className = "answer-category";
-          const heading = document.createElement("h2");
-          heading.textContent = category;
-          section.appendChild(heading);
-
-          const list = document.createElement("div");
-          list.className = "answer-list";
-          for (const card of cards) {
-            const item = document.createElement("article");
-            item.className = "answer-card";
-
-            const value = document.createElement("p");
-            value.className = "answer-value";
-            const pointValue = game.values?.[card.order];
-            value.textContent = Number.isFinite(pointValue) ? `$${pointValue}` : "Clue";
-
-            const question = document.createElement("p");
-            question.className = "answer-question";
-            question.textContent = card.question || "Question unavailable";
-
-            const answer = document.createElement("p");
-            answer.className = "answer-response";
-            const label = document.createElement("strong");
-            label.textContent = "Answer: ";
-            answer.append(label, document.createTextNode(card.answer || "Answer unavailable"));
-
-            item.append(value, question, answer);
-            list.appendChild(item);
-          }
-          section.appendChild(list);
-          answerKey.appendChild(section);
-        }
-
-        status.hidden = true;
-      } catch (error) {
-        console.error("Failed to load the proctor answer key.", error);
-        status.textContent = "Unable to load the answer key. Open this page from the hosted site and check that the game data is available.";
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corrupt Bargain — Proctor Answer Key</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=block"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Styles.css" />
+    <style>
+      .proctor-page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px 20px 48px;
       }
-    }
+      .proctor-header {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+      .proctor-header h1 {
+        color: var(--accent);
+        font:
+          2.2rem "Fredoka One",
+          cursive;
+      }
+      .proctor-header p {
+        color: var(--text-muted);
+        margin-top: 8px;
+      }
+      .proctor-actions {
+        margin-top: 18px;
+      }
+      .answer-category {
+        margin: 24px 0;
+        break-inside: avoid;
+      }
+      .answer-category h2 {
+        padding: 12px 16px;
+        border-radius: 8px;
+        background: var(--category-bg);
+        color: var(--category-text);
+        font-size: 1.1rem;
+        text-transform: uppercase;
+      }
+      .answer-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .answer-card {
+        padding: 14px 16px;
+        border: 1px solid var(--glass-border);
+        border-radius: 10px;
+        background: var(--panel-bg);
+        break-inside: avoid;
+      }
+      .answer-value {
+        color: var(--accent-light);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .answer-question {
+        color: var(--text);
+        margin-top: 4px;
+      }
+      .answer-response {
+        color: var(--text);
+        margin-top: 8px;
+      }
+      .answer-response strong {
+        color: var(--accent-light);
+      }
+      .proctor-status {
+        color: var(--text-muted);
+        text-align: center;
+        padding: 24px 0;
+      }
 
-    loadAnswerKey();
-  </script>
-</body>
+      @media print {
+        body {
+          background: #fff;
+          color: #111;
+        }
+        .proctor-page {
+          max-width: none;
+          padding: 0;
+        }
+        .proctor-header {
+          margin-bottom: 16px;
+        }
+        .proctor-header h1,
+        .answer-category h2,
+        .answer-question,
+        .answer-response,
+        .answer-response strong,
+        .answer-value {
+          color: #111;
+        }
+        .proctor-header p {
+          color: #444;
+        }
+        .proctor-actions,
+        .proctor-status {
+          display: none;
+        }
+        .answer-category h2 {
+          background: #eee;
+          border: 1px solid #777;
+        }
+        .answer-card {
+          background: #fff;
+          border-color: #aaa;
+        }
+        .answer-category,
+        .answer-card {
+          break-inside: avoid;
+        }
+      }
+    </style>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Jeopardy" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <main class="proctor-page">
+      <header class="proctor-header">
+        <h1 id="gameTitle">Proctor Answer Key</h1>
+        <p>Clues and answers, grouped by category and point value.</p>
+        <div class="proctor-actions">
+          <button class="btn" type="button" onclick="window.print()">
+            Print Answer Key
+          </button>
+        </div>
+      </header>
+      <p class="proctor-status" id="proctorStatus" role="status">
+        Loading answer key…
+      </p>
+      <div id="answerKey"></div>
+    </main>
+    <script>
+      async function loadAnswerKey() {
+        const status = document.getElementById("proctorStatus");
+        const answerKey = document.getElementById("answerKey");
+
+        try {
+          const response = await fetch("data/Corrupt-Bargain.json", {
+            cache: "no-store",
+          });
+          if (!response.ok) {
+            throw new Error(`Unable to load game data (${response.status})`);
+          }
+
+          const data = await response.json();
+          const game = Array.isArray(data.games) ? data.games[0] : data;
+          if (
+            !game ||
+            !Array.isArray(game.categories) ||
+            !Array.isArray(game.cards)
+          ) {
+            throw new Error("Game data is missing categories or clues");
+          }
+
+          document.getElementById("gameTitle").textContent =
+            `${game.name || "Jeopardy"} — Proctor Answer Key`;
+          for (const category of game.categories) {
+            const cards = game.cards
+              .filter((card) => card.category === category)
+              .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+            if (cards.length === 0) continue;
+
+            const section = document.createElement("section");
+            section.className = "answer-category";
+            const heading = document.createElement("h2");
+            heading.textContent = category;
+            section.appendChild(heading);
+
+            const list = document.createElement("div");
+            list.className = "answer-list";
+            for (const card of cards) {
+              const item = document.createElement("article");
+              item.className = "answer-card";
+
+              const value = document.createElement("p");
+              value.className = "answer-value";
+              const pointValue = game.values?.[card.order];
+              value.textContent = Number.isFinite(pointValue)
+                ? `$${pointValue}`
+                : "Clue";
+
+              const question = document.createElement("p");
+              question.className = "answer-question";
+              question.textContent = card.question || "Question unavailable";
+
+              const answer = document.createElement("p");
+              answer.className = "answer-response";
+              const label = document.createElement("strong");
+              label.textContent = "Answer: ";
+              answer.append(
+                label,
+                document.createTextNode(card.answer || "Answer unavailable"),
+              );
+
+              item.append(value, question, answer);
+              list.appendChild(item);
+            }
+            section.appendChild(list);
+            answerKey.appendChild(section);
+          }
+
+          status.hidden = true;
+        } catch (error) {
+          console.error("Failed to load the proctor answer key.", error);
+          status.textContent =
+            "Unable to load the answer key. Open this page from the hosted site and check that the game data is available.";
+        }
+      }
+
+      loadAnswerKey();
+    </script>
+  </body>
 </html>

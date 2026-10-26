@@ -1,85 +1,165 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="jeopardy-theme">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jeopardy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=block" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Styles.css">
-  <script>
-    (function() {
-      const saved = localStorage.getItem("jeopardy_theme");
-      if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
-        document.documentElement.classList.add("light-theme");
-      }
-    })();
-  </script>
-</head>
-<body>
-  <main class="login-screen" id="loginScreen">
-    <form class="login-card" id="loginForm">
-      <h1>Jeopardy</h1>
-      <p class="subtitle">Sign in to open your game</p>
-      <div class="login-theme-row">
-        <button class="btn secondary theme-toggle" type="button" onclick="toggleTheme()">Light Mode</button>
-      </div>
-      <label for="username">Username</label>
-      <input id="username" name="username" type="text" autocomplete="username" required>
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" autocomplete="current-password" required>
-      <button class="btn" type="submit">Open Game</button>
-      <p class="login-error" id="loginError" role="alert"></p>
-    </form>
-  </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeopardy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=block"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Styles.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("jeopardy_theme");
+        if (
+          saved === "light" ||
+          (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)
+        ) {
+          document.documentElement.classList.add("light-theme");
+        }
+      })();
+    </script>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Jeopardy" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <main class="login-screen" id="loginScreen">
+      <form class="login-card" id="loginForm">
+        <h1>Jeopardy</h1>
+        <p class="subtitle">Sign in to open your game</p>
+        <div class="login-theme-row">
+          <button
+            class="btn secondary theme-toggle"
+            type="button"
+            onclick="toggleTheme()"
+          >
+            Light Mode
+          </button>
+        </div>
+        <label for="username">Username</label>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          autocomplete="username"
+          required
+        />
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          required
+        />
+        <button class="btn" type="submit">Open Game</button>
+        <p class="login-error" id="loginError" role="alert"></p>
+      </form>
+    </main>
 
-  <div class="app" id="gameScreen" hidden>
-    <header>
-      <h1 id="gameTitle">Jeopardy</h1>
-      <p class="subtitle">Click a tile, reveal the answer, award points, and mark the clue complete.</p>
-      <div class="controls">
-        <button class="btn secondary" onclick="showLogin()">Switch Game</button>
-        <button class="btn" onclick="resetBoard()">Reset Board</button>
-        <button class="btn secondary" onclick="resetScores()">Reset Scores</button>
-        <button class="btn secondary theme-toggle" id="themeToggle" onclick="toggleTheme()">Light Mode</button>
-      </div>
-    </header>
+    <div class="app" id="gameScreen" hidden>
+      <header>
+        <h1 id="gameTitle">Jeopardy</h1>
+        <p class="subtitle">
+          Click a tile, reveal the answer, award points, and mark the clue
+          complete.
+        </p>
+        <div class="controls">
+          <button class="btn secondary" onclick="showLogin()">
+            Switch Game
+          </button>
+          <button class="btn" onclick="resetBoard()">Reset Board</button>
+          <button class="btn secondary" onclick="resetScores()">
+            Reset Scores
+          </button>
+          <button
+            class="btn secondary theme-toggle"
+            id="themeToggle"
+            onclick="toggleTheme()"
+          >
+            Light Mode
+          </button>
+        </div>
+      </header>
 
-    <section class="scoreboard" id="scoreboard" aria-label="Scoreboard"></section>
-    <main class="board" id="board" aria-label="Jeopardy board"></main>
-    <p class="footer-note">Tip: After opening a clue, use the +/- buttons under each team to apply that clue's value.</p>
-  </div>
+      <section
+        class="scoreboard"
+        id="scoreboard"
+        aria-label="Scoreboard"
+      ></section>
+      <main class="board" id="board" aria-label="Jeopardy board"></main>
+      <p class="footer-note">
+        Tip: After opening a clue, use the +/- buttons under each team to apply
+        that clue's value.
+      </p>
+    </div>
 
-  <div class="modal-backdrop" id="modalBackdrop" onclick="backdropClose(event)">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalMeta">
-      <div class="modal-meta" id="modalMeta"></div>
-      <div class="clue" id="modalQuestion"></div>
-      <div class="answer" id="modalAnswer"></div>
-      <div class="modal-actions">
-        <button class="btn" onclick="showAnswer()">Show Answer</button>
-        <button class="btn secondary" onclick="markCompleteAndClose()">Mark Complete</button>
-        <button class="btn secondary" onclick="closeModal()">Close</button>
+    <div
+      class="modal-backdrop"
+      id="modalBackdrop"
+      onclick="backdropClose(event)"
+    >
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalMeta"
+      >
+        <div class="modal-meta" id="modalMeta"></div>
+        <div class="clue" id="modalQuestion"></div>
+        <div class="answer" id="modalAnswer"></div>
+        <div class="modal-actions">
+          <button class="btn" onclick="showAnswer()">Show Answer</button>
+          <button class="btn secondary" onclick="markCompleteAndClose()">
+            Mark Complete
+          </button>
+          <button class="btn secondary" onclick="closeModal()">Close</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="modal-backdrop" id="wagerModal">
-    <div class="modal wager-modal" role="dialog" aria-modal="true">
-      <div class="wager-title" id="wagerTitle">Daily Double!</div>
-      <div class="wager-category" id="wagerCategory"></div>
-      <label class="wager-label" for="wagerInput">Place your wager</label>
-      <input type="number" id="wagerInput" class="wager-input" min="0" placeholder="0" autocomplete="off">
-      <div class="wager-max" id="wagerMax"></div>
-      <div class="wager-error" id="wagerError"></div>
-      <div class="modal-actions">
-        <button class="btn secondary" onclick="cancelWager()">Back</button>
-        <button class="btn" onclick="confirmWager()">Lock In</button>
+    <div class="modal-backdrop" id="wagerModal">
+      <div class="modal wager-modal" role="dialog" aria-modal="true">
+        <div class="wager-title" id="wagerTitle">Daily Double!</div>
+        <div class="wager-category" id="wagerCategory"></div>
+        <label class="wager-label" for="wagerInput">Place your wager</label>
+        <input
+          type="number"
+          id="wagerInput"
+          class="wager-input"
+          min="0"
+          placeholder="0"
+          autocomplete="off"
+        />
+        <div class="wager-max" id="wagerMax"></div>
+        <div class="wager-error" id="wagerError"></div>
+        <div class="modal-actions">
+          <button class="btn secondary" onclick="cancelWager()">Back</button>
+          <button class="btn" onclick="confirmWager()">Lock In</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="Jeopardy/jeopardy.js"></script>
-</body>
+    <script src="Jeopardy/jeopardy.js"></script>
+  </body>
 </html>
